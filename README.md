@@ -15,8 +15,16 @@ asdf install starknet-foundry 0.22.0
 asdf global starknet-foundry 0.22.0
 ```
 
-openzeppelin 0.10.0
+### openzeppelin _0.10.0_
 
-#
+```text
+[dependencies]
+openzeppelin = { git = "https://github.com/openzeppelin/cairo-contracts", tag = "v0.10.0"}
+```
+
+---
+
+```sh
 scarb build
 snforge test
+```
