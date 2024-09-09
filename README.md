@@ -3,16 +3,14 @@
 ### scarb _2.6.3_ [docs](https://docs.swmansion.com/scarb/download.html)
 
 ```sh
-asdf install scarb 2.6.3
-asdf global scarb 2.6.3
+curl --proto '=https' --tlsv1.2 -sSf https://docs.swmansion.com/scarb/install.sh | sh -s -- -v 2.6.3
 ```
 
 ### starknet-foundry _0.22.0_ [docs](https://foundry-rs.github.io/starknet-foundry/getting-started/installation.html)
 
 ```sh
-asdf plugin add starknet-foundry
-asdf install starknet-foundry 0.22.0
-asdf global starknet-foundry 0.22.0
+curl -L https://raw.githubusercontent.com/foundry-rs/starknet-foundry/master/scripts/install.sh | sh
+snfoundryup --version 0.22.0
 ```
 
 ### openzeppelin _0.10.0_
