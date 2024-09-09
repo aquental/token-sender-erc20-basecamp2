@@ -1,13 +1,13 @@
 ## setup
 
-### scarb 2.6.3
+### scarb _2.6.3_ [docs](https://docs.swmansion.com/scarb/download.html)
 
 ```sh
 asdf install scarb 2.6.3
 asdf global scarb 2.6.3
 ```
 
-### starknet-foundry 0.22.0
+### starknet-foundry _0.22.0_ [docs](https://foundry-rs.github.io/starknet-foundry/getting-started/installation.html)
 
 ```sh
 asdf plugin add starknet-foundry
