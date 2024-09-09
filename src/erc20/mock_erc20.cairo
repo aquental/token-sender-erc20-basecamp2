@@ -1,3 +1,4 @@
+
 #[starknet::contract]
 mod MockERC20 {
     use openzeppelin::token::erc20::ERC20Component;
@@ -26,8 +27,8 @@ mod MockERC20 {
 
     #[constructor]
     fn constructor(ref self: ContractState, initial_supply: u256, recipient: ContractAddress) {
-        let name = "MockToken";
-        let symbol = "MTK";
+        let name = "AQuentalToken";
+        let symbol = "AQntl";
 
         self.erc20.initializer(name, symbol);
         self.erc20._mint(recipient, initial_supply);
