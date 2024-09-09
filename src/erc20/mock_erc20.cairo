@@ -1,6 +1,5 @@
-
 #[starknet::contract]
-mod MockERC20 {
+mod AQuentalToken {
     use openzeppelin::token::erc20::ERC20Component;
     use starknet::ContractAddress;
 

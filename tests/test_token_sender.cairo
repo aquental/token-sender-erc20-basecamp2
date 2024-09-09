@@ -22,8 +22,8 @@ use serde::Serde;
 use box::BoxTrait;
 use integer::u256;
 
-use token_sender::erc20::mock_erc20::MockERC20;
-use token_sender::erc20::mock_erc20::MockERC20::{Event::ERC20Event};
+use token_sender::erc20::mock_erc20::AQuentalToken;
+use token_sender::erc20::mock_erc20::AQuentalToken::{Event::ERC20Event};
 use token_sender::erc20::erc20::{IERC20Dispatcher, IERC20DispatcherTrait};
 
 use token_sender::token_sender::sender::{ITokenSenderDispatcher, ITokenSenderDispatcherTrait};
@@ -33,7 +33,7 @@ use token_sender::token_sender::sender::TransferRequest;
 const INITIAL_SUPPLY: u256 = 1000000000;
 
 fn setup() -> (ContractAddress, ContractAddress) {
-    let erc20_class_hash = declare("MockERC20").unwrap();
+    let erc20_class_hash = declare("AQuentalToken").unwrap();
     // let account: ContractAddress = get_contract_address();
 
     let account: ContractAddress = contract_address_const::<1>();
@@ -139,7 +139,7 @@ fn test_multisend() {
 
     start_prank(CheatTarget::One(erc20_address), account);
 
-    let transfer_value: u256 = 100;
+    let transfer_value: u256 = 200;
     erc20.approve(token_sender_address, transfer_value * 2);
 
     assert(

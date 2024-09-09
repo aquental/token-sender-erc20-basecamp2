@@ -18,5 +18,5 @@ sierra = true
 casm = true
 build-external-contracts = [
     "token_sender::token_sender::sender::TokenSender",
-    "token_sender::erc20::mock_erc20::MockERC20"
+    "token_sender::erc20::mock_erc20::AQuentalToken"
 ]

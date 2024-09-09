@@ -19,9 +19,9 @@ use serde::Serde;
 use box::BoxTrait;
 use integer::u256;
 
-use token_sender::erc20::mock_erc20::MockERC20;
+use token_sender::erc20::mock_erc20::AQuentalToken;
 
-use token_sender::erc20::mock_erc20::MockERC20::{Event::ERC20Event};
+use token_sender::erc20::mock_erc20::AQuentalToken::{Event::ERC20Event};
 use openzeppelin::token::erc20::ERC20Component;
 
 
@@ -31,7 +31,7 @@ const INITIAL_SUPPLY: u256 = 1000000000;
 
 
 fn setup() -> ContractAddress {
-    let erc20_class_hash = declare("MockERC20").unwrap();
+    let erc20_class_hash = declare("AQuentalToken").unwrap();
 
     let account: ContractAddress = contract_address_const::<1>();
 
