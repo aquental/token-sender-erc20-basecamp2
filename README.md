@@ -7,7 +7,7 @@ asdf install scarb 2.6.3
 asdf global scarb 2.6.3
 ```
 
-### scarb 0.22.0
+### starknet-foundry 0.22.0
 
 ```sh
 asdf plugin add starknet-foundry
