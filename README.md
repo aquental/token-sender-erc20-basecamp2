@@ -26,3 +26,5 @@ openzeppelin = { git = "https://github.com/openzeppelin/cairo-contracts", tag = 
 scarb build
 snforge test
 ```
+
+![build & test](./assets/build-test.png)
