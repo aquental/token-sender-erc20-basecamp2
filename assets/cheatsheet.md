@@ -65,6 +65,14 @@ starkli account fetch 0x00c8101fa47aaf8aee8942e042aa102f9be6fe4049fc88c301d0bf82
 
 ## 3.1 - declarando o token
 
+### free RPC endpoint [services](https://www.starknet.io/fullnodes-rpc-services/)
+
+|        Org | testnet                                     | mainnet                                     |
+| ---------: | ------------------------------------------- | ------------------------------------------- |
+|       Lava | https://rpc.starknet-testnet.lava.build:443 | https://rpc.starknet.lava.build:443         |
+|      Blast | https://starknet-sepolia.public.blastapi.io | https://starknet-mainnet.public.blastapi.io |
+| Nethermind | https://free-rpc.nethermind.io/sepolia-juno | https://free-rpc.nethermind.io/mainnet-juno |
+
 ```sh
-starkli declare target/dev/token_sender_AQuentalToken.compiled_contract_class.json --rpc 
+starkli declare target/dev/token_sender_AQuentalToken.compiled_contract_class.json --rpc
 ```
