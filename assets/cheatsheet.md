@@ -3,6 +3,8 @@
 ```sh
 mkdir ./wallets
 mkdir ./wallets/erc20
+
+export WALLET="$PWD/wallets/erc20"
 ```
 
 # 1 - Key
@@ -10,9 +12,9 @@ mkdir ./wallets/erc20
 ## 1.1 - criando _nova_ pvt key (não existe)
 
 ```sh
-starkli signer keystore new ./wallets/erc20/usr_keystore.json
+starkli signer keystore new $WALLET/usr_keystore.json
 
-export STARKNET_KEYSTORE="$PWD/wallets/erc20/usr_keystore.json"
+export STARKNET_KEYSTORE="$WALLET/usr_keystore.json"
 
 echo $STARKNET_KEYSTORE
 ```
@@ -20,7 +22,7 @@ echo $STARKNET_KEYSTORE
 ## 1.2 - conectando com a pvt local (caso já exista)
 
 ```sh
-starkli signer keystore from-key $STK_KS
+starkli signer keystore from-key $STARKNET_KEYSTORE
 ```
 
 # 2 - [_Signers_](https://book.starkli.rs/signers)
@@ -29,6 +31,7 @@ starkli signer keystore from-key $STK_KS
 
 ```sh
 starkli account oz init ./wallets/erc20/usr_account.json
+
 Enter keystore password:
 Created new account config file: /Users/aquental/projects/starknet/token-sender-erc20-basecamp2/wallets/erc20/usr_account.json
 
@@ -56,9 +59,9 @@ Transaction 0x01a95bc2594734a04857746a0145ded79dc91cb4df488e12836572e5e0b143cb c
 ## 2.2 - conectando com a conta local
 
 ```sh
-cat ./wallets/erc20/usr_account.json
+cat $WALLET/usr_account.json
 
-starkli account fetch 0x00c8101fa47aaf8aee8942e042aa102f9be6fe4049fc88c301d0bf8211dc6479 --rpc <???> --output ./wallets/erc20/usr_account.json
+starkli account fetch 0x00c8101fa47aaf8aee8942e042aa102f9be6fe4049fc88c301d0bf8211dc6479 --output $WALLET/usr_account.json
 ```
 
 # 3 - Deploy
@@ -74,5 +77,11 @@ starkli account fetch 0x00c8101fa47aaf8aee8942e042aa102f9be6fe4049fc88c301d0bf82
 | Nethermind | https://free-rpc.nethermind.io/sepolia-juno | https://free-rpc.nethermind.io/mainnet-juno |
 
 ```sh
-starkli declare target/dev/token_sender_AQuentalToken.compiled_contract_class.json --rpc
+export STARKNET_RPC="https://free-rpc.nethermind.io/sepolia-juno"
+
+echo $STARKNET_KEYSTORE
+echo $STARKNET_ACCOUNT
+echo $STARKNET_RPC
+
+starkli declare target/dev/token_sender_AQuentalToken.compiled_contract_class.json 
 ```
