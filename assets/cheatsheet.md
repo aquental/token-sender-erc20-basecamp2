@@ -110,3 +110,10 @@ Contract declaration transaction: 0x0112f69613f41d6508bddd057d291ba5cf76d415df07
 Class hash declared:
 0x043088b4fd786972c13e23e2ec36f83c7560895910ddabf25f61679da919717f
 ```
+
+## 3.2 - deploy [docs]()
+
+```sh
+starkli deploy 0x043088b4fd786972c13e23e2ec36f83c7560895910ddabf25f61679da919717f u256:1000000000 
+
+```
