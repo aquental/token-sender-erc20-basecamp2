@@ -39,3 +39,7 @@ snforge test
 [cheat sheet](./assets/cheatsheet.md)
 
 ![build & test](./assets/build-test.png)
+
+---
+
+[Mainnet](./assets/mainnet.md)
