@@ -114,6 +114,14 @@ Class hash declared:
 ## 3.2 - deploy [docs]()
 
 ```sh
-starkli deploy 0x043088b4fd786972c13e23e2ec36f83c7560895910ddabf25f61679da919717f u256:1000000000 
+starkli deploy 0x043088b4fd786972c13e23e2ec36f83c7560895910ddabf25f61679da919717f u256:1000000000 $ACC
 
+Enter keystore password:
+Deploying class 0x043088b4fd786972c13e23e2ec36f83c7560895910ddabf25f61679da919717f with salt 0x00996bf2f84cdcd183830abbef772d330fd4c1b4ef231e543d12bdf3efc9fce8...
+The contract will be deployed at address 0x00640b0646b8344fed536aeb519c6a696cd03311ee03edd9a0e518eb0d4d07fa
+Contract deployment transaction: 0x0029eafe189d5dadfb7563c20c4e8d4ceb1567e8101c8fcee49997e2ea65d484
+Contract deployed:
+0x00640b0646b8344fed536aeb519c6a696cd03311ee03edd9a0e518eb0d4d07fa
 ```
+
+[sepolia contract](https://sepolia.voyager.online/contract/0x00640b0646b8344fed536aeb519c6a696cd03311ee03edd9a0e518eb0d4d07fa)
