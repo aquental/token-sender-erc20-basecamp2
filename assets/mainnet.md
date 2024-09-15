@@ -117,6 +117,6 @@ Contract deployed:
 0x010851e15fb312a325d1d9a54bc753b200d8059c3e3fcc51dff782a0cfc7f86a
 ```
 
-[sepolia contract](https://voyager.online/contract/0x010851e15fb312a325d1d9a54bc753b200d8059c3e3fcc51dff782a0cfc7f86a)
+[mainnet contract](https://voyager.online/contract/0x010851e15fb312a325d1d9a54bc753b200d8059c3e3fcc51dff782a0cfc7f86a)
 
 ![transaction](./contract-mainnet.png)
