@@ -1,9 +1,9 @@
 ## setup
 
-### scarb _2.6.3_ [docs](https://docs.swmansion.com/scarb/download.html)
+### scarb _2.6.4_ [docs](https://docs.swmansion.com/scarb/download.html)
 
 ```sh
-curl --proto '=https' --tlsv1.2 -sSf https://docs.swmansion.com/scarb/install.sh | sh -s -- -v 2.6.3
+curl --proto '=https' --tlsv1.2 -sSf https://docs.swmansion.com/scarb/install.sh | sh -s -- -v 2.6.4
 ```
 
 ### starknet-foundry _0.22.0_ [docs](https://foundry-rs.github.io/starknet-foundry/getting-started/installation.html)
