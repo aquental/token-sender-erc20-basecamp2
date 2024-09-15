@@ -99,17 +99,24 @@ Network detected: mainnet. Using the default compiler version for this network: 
 Declaring Cairo 1 class: 0x043088b4fd786972c13e23e2ec36f83c7560895910ddabf25f61679da919717f
 Compiling Sierra class to CASM with compiler version 2.6.4...
 CASM class hash: 0x00789ba119feecf7bb2697e1910645846205f7c22d32600f499dddc3ad145b5c
-Error: ValidationFailure: Max fee (45258421448466) exceeds balance (96686417367).
+Contract declaration transaction: 0x042875fc92ca2c42e8172efe67e8873e32fd18d18fa7321cce5e90b17ad58949
+Class hash declared:
+0x043088b4fd786972c13e23e2ec36f83c7560895910ddabf25f61679da919717f
 ```
 
 ## 3.2 - deploy [docs]()
 
 ```sh
-starkli deploy 0x00789ba119feecf7bb2697e1910645846205f7c22d32600f499dddc3ad145b5c u256:1000000000 $ACC
+starkli deploy 0x043088b4fd786972c13e23e2ec36f83c7560895910ddabf25f61679da919717f u256:1000000000 $ACC
 
-
+Enter keystore password:
+Deploying class 0x043088b4fd786972c13e23e2ec36f83c7560895910ddabf25f61679da919717f with salt 0x07604c70fba1041499bb54645e78fb7b27eb1c0eca969dfbe287c0ae8537ac56...
+The contract will be deployed at address 0x010851e15fb312a325d1d9a54bc753b200d8059c3e3fcc51dff782a0cfc7f86a
+Contract deployment transaction: 0x038174320f7f22c147ae4dce7075c786675293d1ab3b9a628ee6aff48c2e26a7
+Contract deployed:
+0x010851e15fb312a325d1d9a54bc753b200d8059c3e3fcc51dff782a0cfc7f86a
 ```
 
-[sepolia contract](https://sepolia.voyager.online/contract/000)
+[sepolia contract](https://voyager.online/contract/0x010851e15fb312a325d1d9a54bc753b200d8059c3e3fcc51dff782a0cfc7f86a)
 
 ![transaction](./contract-mainnet.png)
