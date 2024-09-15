@@ -38,32 +38,39 @@ Enter keystore password:
 Created new account config file: /Users/aquental/projects/starknet/token-sender-erc20-basecamp2/wallets/erc20/usr_account.json
 
 Once deployed, this account will be available at:
-    0x00c8101fa47aaf8aee8942e042aa102f9be6fe4049fc88c301d0bf8211dc6479
+    0x06ce402762229fdcf7970969b79473d80b528503e69f8bd4c73a29a9e4d808c1
 
 Deploy this account by running:
-    starkli account deploy ./wallets/erc20/usr_account.json
+    starkli account deploy /Users/aquental/projects/starknet/token-sender-erc20-basecamp2/wallets/erc20/usr_account.json
 
 
-starkli account deploy ./wallets/erc20/usr_account.json
-WARNING: you're using neither --rpc (STARKNET_RPC) nor --network (STARKNET_NETWORK). The `sepolia` network is used by default. See https://book.starkli.rs/providers for more details.
+starkli account deploy $WALLET/usr_account.json
+
 Enter keystore password:
-The estimated account deployment fee is 0.000049167346023640 ETH. However, to avoid failure, fund at least:
-    0.000073751019035460 ETH
+The estimated account deployment fee is 0.000007968074030020 ETH. However, to avoid failure, fund at least:
+    0.000011952111045030 ETH
 to the following address:
-    0x00c8101fa47aaf8aee8942e042aa102f9be6fe4049fc88c301d0bf8211dc6479
+    0x06ce402762229fdcf7970969b79473d80b528503e69f8bd4c73a29a9e4d808c1
 Press [ENTER] once you've funded the address.
-Account deployment transaction: 0x01a95bc2594734a04857746a0145ded79dc91cb4df488e12836572e5e0b143cb
-Waiting for transaction 0x01a95bc2594734a04857746a0145ded79dc91cb4df488e12836572e5e0b143cb to confirm. If this process is interrupted, you will need to run `starkli account fetch` to update the account file.
+Account deployment transaction: 0x02ff8b02890eeacbf873dc731ecdb8d4e475943d3a6ac37b5e7bccc2f992028d
+Waiting for transaction 0x02ff8b02890eeacbf873dc731ecdb8d4e475943d3a6ac37b5e7bccc2f992028d to confirm. If this process is interrupted, you will need to run `starkli account fetch` to update the account file.
 Transaction not confirmed yet...
-Transaction 0x01a95bc2594734a04857746a0145ded79dc91cb4df488e12836572e5e0b143cb confirmed
+Transaction 0x02ff8b02890eeacbf873dc731ecdb8d4e475943d3a6ac37b5e7bccc2f992028d confirmed
+
+export ACC="0x06ce402762229fdcf7970969b79473d80b528503e69f8bd4c73a29a9e4d808c1"
 ```
 
 ## 2.2 - conectando com a conta local
 
 ```sh
 cat $WALLET/usr_account.json
+echo $ACC
 
-starkli account fetch 0x00c8101fa47aaf8aee8942e042aa102f9be6fe4049fc88c301d0bf8211dc6479 --output $WALLET/usr_account.json
+starkli account fetch $ACC --output $WALLET/usr_account.json
+
+Account contract type identified as: OpenZeppelin
+Description: OpenZeppelin account contract v0.13.0 compiled with cairo v2.6.3
+Downloaded new account config file: /Users/aquental/projects/starknet/token-sender-erc20-basecamp2/wallets/erc20/usr_account.json
 ```
 
 # 3 - Deploy
@@ -85,5 +92,5 @@ echo $STARKNET_KEYSTORE
 echo $STARKNET_ACCOUNT
 echo $STARKNET_RPC
 
-starkli declare target/dev/token_sender_AQuentalToken.compiled_contract_class.json 
+starkli declare ./target/dev/token_sender_AQuentalToken.compiled_contract_class.json --account $WALLET/usr_account.json
 ```
