@@ -5,6 +5,8 @@ mkdir ./wallets
 mkdir ./wallets/erc20
 
 export WALLET="$PWD/wallets/erc20"
+
+echo $WALLET
 ```
 
 # 1 - Key
@@ -30,7 +32,7 @@ starkli signer keystore from-key $STARKNET_KEYSTORE
 ## 2.1 - criando conta
 
 ```sh
-starkli account oz init ./wallets/erc20/usr_account.json
+starkli account oz init $WALLET/usr_account.json
 
 Enter keystore password:
 Created new account config file: /Users/aquental/projects/starknet/token-sender-erc20-basecamp2/wallets/erc20/usr_account.json
