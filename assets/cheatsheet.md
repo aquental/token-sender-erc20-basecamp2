@@ -25,6 +25,11 @@ echo $STARKNET_KEYSTORE
 
 ```sh
 starkli signer keystore from-key $STARKNET_KEYSTORE
+
+Enter private key:
+Enter password:
+Created new encrypted keystore file: /Users/aquental/projects/starknet/token-sender-erc20-basecamp2/wallets/erc20/usr_keystore.json
+Public key: 0x002b091e333b5e8757a766ca1ce48a91472863955d01785d8f6beb971b424ef9
 ```
 
 # 2 - [_Signers_](https://book.starkli.rs/signers)
@@ -38,32 +43,33 @@ Enter keystore password:
 Created new account config file: /Users/aquental/projects/starknet/token-sender-erc20-basecamp2/wallets/erc20/usr_account.json
 
 Once deployed, this account will be available at:
-    0x06ce402762229fdcf7970969b79473d80b528503e69f8bd4c73a29a9e4d808c1
+    0x048c1439fc0151535234636810fc546a460f302ed9ff1671b5c6fea3b8e5034e
 
 Deploy this account by running:
     starkli account deploy /Users/aquental/projects/starknet/token-sender-erc20-basecamp2/wallets/erc20/usr_account.json
 
-
 starkli account deploy $WALLET/usr_account.json
 
 Enter keystore password:
-The estimated account deployment fee is 0.000007968074030020 ETH. However, to avoid failure, fund at least:
-    0.000011952111045030 ETH
+The estimated account deployment fee is 0.000010962449475380 ETH. However, to avoid failure, fund at least:
+    0.000016443674213070 ETH
 to the following address:
-    0x06ce402762229fdcf7970969b79473d80b528503e69f8bd4c73a29a9e4d808c1
+    0x048c1439fc0151535234636810fc546a460f302ed9ff1671b5c6fea3b8e5034e
 Press [ENTER] once you've funded the address.
-Account deployment transaction: 0x02ff8b02890eeacbf873dc731ecdb8d4e475943d3a6ac37b5e7bccc2f992028d
-Waiting for transaction 0x02ff8b02890eeacbf873dc731ecdb8d4e475943d3a6ac37b5e7bccc2f992028d to confirm. If this process is interrupted, you will need to run `starkli account fetch` to update the account file.
+Account deployment transaction: 0x00fd1d372bd26adc6d58a0ab5eaa31ec0058c1a5c8fa7e8ef180e53e4acf460d
+Waiting for transaction 0x00fd1d372bd26adc6d58a0ab5eaa31ec0058c1a5c8fa7e8ef180e53e4acf460d to confirm. If this process is interrupted, you will need to run `starkli account fetch` to update the account file.
 Transaction not confirmed yet...
-Transaction 0x02ff8b02890eeacbf873dc731ecdb8d4e475943d3a6ac37b5e7bccc2f992028d confirmed
+Transaction 0x00fd1d372bd26adc6d58a0ab5eaa31ec0058c1a5c8fa7e8ef180e53e4acf460d confirmed
 
-export ACC="0x06ce402762229fdcf7970969b79473d80b528503e69f8bd4c73a29a9e4d808c1"
+export ACC="0x048c1439fc0151535234636810fc546a460f302ed9ff1671b5c6fea3b8e5034e"
 ```
 
 ## 2.2 - conectando com a conta local
 
 ```sh
-cat $WALLET/usr_account.json
+export STARKNET_ACCOUNT="$WALLET/usr_account.json"
+
+cat $STARKNET_ACCOUNT
 echo $ACC
 
 starkli account fetch $ACC --output $WALLET/usr_account.json
@@ -92,5 +98,15 @@ echo $STARKNET_KEYSTORE
 echo $STARKNET_ACCOUNT
 echo $STARKNET_RPC
 
-starkli declare ./target/dev/token_sender_AQuentalToken.compiled_contract_class.json --account $WALLET/usr_account.json
+starkli declare ./target/dev/token_sender_AQuentalToken.contract_class.json --account $WALLET/usr_account.json
+
+Enter keystore password:
+Sierra compiler version not specified. Attempting to automatically decide version to use...
+Network detected: sepolia. Using the default compiler version for this network: 2.7.1. Use the --compiler-version flag to choose a different version.
+Declaring Cairo 1 class: 0x043088b4fd786972c13e23e2ec36f83c7560895910ddabf25f61679da919717f
+Compiling Sierra class to CASM with compiler version 2.7.1...
+CASM class hash: 0x00789ba119feecf7bb2697e1910645846205f7c22d32600f499dddc3ad145b5c
+Contract declaration transaction: 0x0112f69613f41d6508bddd057d291ba5cf76d415df0738521abc6e90c82ca6ae
+Class hash declared:
+0x043088b4fd786972c13e23e2ec36f83c7560895910ddabf25f61679da919717f
 ```
